@@ -1,0 +1,100 @@
+.aside-menu{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100vh;
+    backdrop-filter: blur(3px);
+    z-index: 200;
+    margin-left: -300px;
+    transition: margin-left .3s;
+}
+
+.aside-menu--show{
+    margin-left: 0px;
+    width: 200vw;
+}
+
+.aside-menu .btn--menu{
+    width: 100%;
+}
+
+.aside-menu .btn--menu:hover{
+    background-color: var(--color-background);
+}
+.aside-menu .btn--menu::after{
+    content: "CLOSE MENU";
+    font-family: sans-serif;
+    margin-left: 5px;
+}
+
+.aside-menu__list{
+    box-shadow: 5px 0px 10px var(--color-background);
+    width: 300px;
+    height: 100%;
+    list-style: none;
+    padding: 5px;
+    transition: margin-left .3s;
+    
+    background-color: var(--color-card);
+    background-image: url('../resources/stacked-waves-haikei.svg');
+    background-size: cover;
+    background-blend-mode: difference;
+}
+
+.aside-menu__list__item{
+    border-radius: 5px;
+    margin: 3px;
+    transition: transform .3s, background-color .5s ;
+}
+
+.aside-menu__list__item:hover:not(:first-child){
+    transform: translateX(5px);
+    background-color: var(--color-background);
+    outline: solid 1px var(--color-card);
+}
+
+.aside-menu__list__item:hover:not(:first-child)::after{
+    content: "GO!";
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-weight: bolder;
+    color: var(--color-title);
+    display: flex;
+    align-items: center;
+}
+
+.aside-menu__list__item a{
+    outline: none;
+    width: 100%;
+    padding: 5px 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-title);
+
+}
+
+@media (max-width: 500px){
+    .aside-menu__list{
+        width: 100vw;
+    }
+
+    .aside-menu{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(3px);
+        z-index: 200;
+        margin-left: -100vw;
+        transition: margin-left .3s;
+    }
+
+    .aside-menu--show{
+        margin-left: 0px;
+        width: 200vw;
+    }
+}

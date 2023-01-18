@@ -1,0 +1,15 @@
+.categories{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.categories__item{
+    flex-grow: 1;
+    height: 50px;
+    margin: 5px;
+    min-width: 50px;
+}
+
+#btn-new-category{
+    width: calc(100% - 10px);
+}

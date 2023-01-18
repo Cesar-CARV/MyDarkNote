@@ -1,0 +1,48 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+}
+
+.card {
+    border: solid 5px var(--color-card);
+    border-radius: 10px;
+    background-color: var(--color-card);
+    margin: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    flex-grow: 1;
+    min-width: 150px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow-x: scroll;
+    transition: transform .3s, border .3s;
+}
+
+.card:hover,
+.card:focus{
+    transform: translateY(-5px);
+    border: inset 5px var(--color-text);
+}
+
+.card:active:hover {
+    transform: translateY(-5px);
+    transform: rotate(2deg);
+    border: solid 5px var(--color-text);
+}
+
+.card__header,
+.card__content {
+    width: 100%;
+    min-width: max-content;
+    word-break: keep-all;
+    display: flex;
+}
+
+.card__title {
+    color: var(--color-title);
+    margin-left: 10px;
+}
